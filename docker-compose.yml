@@ -1,0 +1,19 @@
+version: "3"
+services: 
+    web:
+      image: vishalchand/php-docker:php
+      ports:
+      - "8001:80"
+      depends_on:
+      - mysql
+    mysql:
+      image: vishalchand/mysql-docker:sql
+      volumes:
+      - db_data:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: mydatabase
+
+volumes:
+    db_data: {}
+      
