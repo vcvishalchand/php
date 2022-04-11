@@ -9,7 +9,7 @@ pipeline {
             steps{
                 script{
                     sshagent(['DEPLOY_SERVER']) { 
-                        withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'VC.vishal@12', usernameVariable: 'vishalchand')]) {
+                        withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                             echo "Building the docker image"  
                             sh "scp -o StrictHostKeyChecking=no docker-script.sh ${SERVER_IP}:/home/ec2-user"
                             sh "ssh -o StrictHostKeyChecking=no ${SERVER_IP} 'bash ~/docker-script.sh'"
