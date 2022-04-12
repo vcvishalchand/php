@@ -16,7 +16,7 @@ pipeline {
                             sh "ssh ${SERVER_IP} sudo docker build -t ${IMAGE_NAME} /home/ec2-user/docker-files/"   
                             sh "ssh ${SERVER_IP} sudo docker login -u $USERNAME -p $PASSWORD"
                             sh "ssh ${SERVER_IP} sudo docker push ${IMAGE_NAME}" 
-                            sh "ssh ${SERVER_IP} sudo docker-compose -f docker-compose.yml up -d"                      
+                            sh "ssh ${SERVER_IP} sudo docker-compose -f /home/ec2-user/docker-files/docker-compose.yml up -d"                      
                         }
                     echo "Building the docker image"
                     }
