@@ -30,6 +30,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         <input type="text" name="name">
         <input type="text" name="phone">
         <input type="submit" name="submit">
-</form>
+    </form>
 </body>
 </html>
