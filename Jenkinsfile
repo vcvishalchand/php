@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        IMAGE_NAME = 'vishalchand/php-docker:php$BUILD_NUMBER'
+        IMAGE_NAME = 'vishalchand/php-docker:php'
         DEV_SERVER_IP = 'ec2-user@172.31.36.254'
         TEST_SERVER_IP = 'ec2-user@172.31.8.123'
     }
